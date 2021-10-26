@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/app/app_helper.dart';
 import 'package:portfolio/app/constants.dart';
+import 'package:portfolio/pages/about_page/about_page.dart';
 import 'package:portfolio/pages/error_page.dart';
 import 'package:portfolio/pages/init_page.dart';
+import 'package:portfolio/pages/work_page/work_page.dart';
 import 'package:portfolio/pages/wrapper/wrapper_page.dart';
 
 import 'bloc/app_cubit.dart';
@@ -23,6 +25,8 @@ class _AppViewState extends State<AppView> {
     AppRoutes.SPLASH: (_) => InitPage(),
     AppRoutes.ERROR: (_) => ErrorPage(),
     AppRoutes.WRAPPER: (_) => WrapperPage(),
+    AppRoutes.WORK: (_) => WorkPage(),
+    AppRoutes.ABOUT: (_) => AboutPage(),
   };
 
   @override

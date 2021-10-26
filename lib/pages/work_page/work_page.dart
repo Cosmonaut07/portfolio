@@ -1,44 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/navbar.dart';
+import 'package:portfolio/widgets/footer.dart';
+import 'package:portfolio/widgets/large_project.dart';
 import 'package:portfolio/app/app.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/widgets/small_project.dart';
 
 class WorkPage extends StatelessWidget {
   const WorkPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          child: FractionallySizedBox(
-            widthFactor: MediaQuery.of(context).size.width > 600 ? 0.75 : 0.95,
-            alignment: Alignment.center,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 80.h),
-                NavBar(),
-                SizedBox(height: 80.h),
-                FractionallySizedBox(
-                  alignment: Alignment.centerLeft,
-                  widthFactor:
-                      MediaQuery.of(context).size.width > 600 ? 0.5 : 0.80,
-                  child: Text(
-                    'I’m George, ??? developer based in Georgia',
-                    style: Theme.of(context).h1,
-                  ),
-                ),
-                SizedBox(height: 80.h),
-                Image.network(
-                    'https://images.unsplash.com/photo-1593642532400-2682810df593?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80')
-              ],
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FractionallySizedBox(
+          alignment: Alignment.centerLeft,
+          widthFactor: MediaQuery.of(context).size.width > 800 ? 0.5 : 0.90,
+          child: Text(
+            'I’m George, ??? developer based in Georgia',
+            style: Theme.of(context).h1,
           ),
         ),
-      ),
+        SizedBox(height: 80.h),
+        MediaQuery.of(context).size.width > 800
+            ? LargeProject()
+            : SmallProject(),
+        SizedBox(height: 80.h),
+        MediaQuery.of(context).size.width < 800
+            ? Flex(
+                direction: MediaQuery.of(context).size.width > 800
+                    ? Axis.horizontal
+                    : Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SmallProject(),
+                  SizedBox(height: 80.h),
+                  SmallProject(),
+                  SizedBox(height: 80.h),
+                  SmallProject(),
+                ],
+              )
+            : FittedBox(
+                fit: BoxFit.cover,
+                child: Flex(
+                  direction: MediaQuery.of(context).size.width > 800
+                      ? Axis.horizontal
+                      : Axis.vertical,
+                  children: [
+                    SmallProject(),
+                    SizedBox(width: 15.w, height: 80.h),
+                    SmallProject(),
+                    SizedBox(width: 15.w, height: 80.h),
+                    SmallProject(),
+                  ],
+                ),
+              ),
+      ],
     );
   }
 }

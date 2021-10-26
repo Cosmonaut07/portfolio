@@ -21,38 +21,38 @@ extension ThemeExt on ThemeData {
   TextStyle get caption => TextStyle(
         color: kPRIMARY900,
         fontWeight: FontWeight.w400,
-        fontSize: 13.sp,
+        fontSize: 13,
         fontFamily: 'Work',
       );
 
   TextStyle get small => TextStyle(
         color: kPRIMARY900,
         fontWeight: FontWeight.w400,
-        fontSize: 115.sp,
+        fontSize: 15,
       );
   TextStyle get p => TextStyle(
         color: kPRIMARY900,
         fontWeight: FontWeight.w400,
-        fontSize: 17.sp,
+        fontSize: 17,
         fontFamily: 'Work',
       );
   TextStyle get bodyMedium => TextStyle(
         color: kPRIMARY900,
         fontWeight: FontWeight.w500,
-        fontSize: 17.sp,
+        fontSize: 17,
         fontFamily: 'Work',
       );
   TextStyle get body => TextStyle(
         color: kPRIMARY900,
         fontWeight: FontWeight.w400,
-        fontSize: 17.sp,
+        fontSize: 17,
         fontFamily: 'Work',
       );
   TextStyle get headline => TextStyle(
         color: kPRIMARY900,
-        fontWeight: FontWeight.w400,
         fontSize: 20,
         fontFamily: 'Work',
+        fontWeight: FontWeight.w400,
       );
   TextStyle get h2 => TextStyle(
         color: kPRIMARY900,
@@ -71,37 +71,37 @@ extension ThemeExt on ThemeData {
 class AppThemes {
   ThemeData get theme => ThemeData(
         fontFamily: 'Work',
-        scaffoldBackgroundColor: kWHITE,
+        scaffoldBackgroundColor: Color.fromRGBO(250, 250, 250, 1),
         textTheme: TextTheme(
           //Caption
           caption: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 13.sp,
+            fontSize: 13,
           ),
           //Small
           subtitle2: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 115.sp,
+            fontSize: 15,
           ),
           //P
           subtitle1: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
           //Body Medium
           bodyText2: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w500,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
           //Body
           bodyText1: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
           //Headline
           headline3: TextStyle(
@@ -113,13 +113,13 @@ class AppThemes {
           headline2: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 28.sp,
+            fontSize: 28,
           ),
           //H1
           headline1: TextStyle(
             color: kPRIMARY900,
             fontWeight: FontWeight.w400,
-            fontSize: 36.sp,
+            fontSize: 36,
           ),
         ),
       );
