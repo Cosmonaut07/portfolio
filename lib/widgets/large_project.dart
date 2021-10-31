@@ -1,7 +1,9 @@
 import 'package:portfolio/app/app.dart';
 
 class LargeProject extends StatelessWidget {
-  const LargeProject({Key? key}) : super(key: key);
+  final String title;
+  final String description;
+  const LargeProject({required this.description, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,11 @@ class LargeProject extends StatelessWidget {
           ),
           SizedBox(height: 80.h),
           Text(
-            'Project Name',
+            title,
             style: Theme.of(context).headline,
           ),
           Text(
-            'Product descript',
+            description,
             style: Theme.of(context).body,
           ),
         ],

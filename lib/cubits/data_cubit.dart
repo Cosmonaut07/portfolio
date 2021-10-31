@@ -7,26 +7,30 @@ import 'package:portfolio/services/providers/about_me_provider.dart';
 import 'package:portfolio/services/providers/experience_provider.dart';
 import 'package:portfolio/services/providers/project_provider.dart';
 
-part 'app_state.dart';
+part 'data_state.dart';
 
-class AppCubit extends Cubit<AppState> {
-  AppCubit() : super(AppInitial()) {
+class DataCubit extends Cubit<DataState> {
+  DataCubit() : super(Datainitial()) {
     appInit();
   }
 
   void appInit() async {
-    emit(AppLoading());
+    emit(DataLoading());
     //get all necessary data
     try {
       final List<ExperienceModel> experiences =
           await ExperienceProvider().getExperiences();
+      print(experiences);
       final List<ProjectModel> projects = await ProjectProvider().getProjects();
+      print(projects);
       final List<AboutMeModel> aboutMe = await AboutMeProvider().getAboutMe();
+      print(aboutMe);
 
-      emit(AppLoaded(
+      emit(DataLoaded(
           aboutMe: aboutMe, experiences: experiences, projects: projects));
-    } catch (_) {
-      emit(AppFailed());
+    } catch (e) {
+      print(e);
+      emit(DataFailed(e));
     }
   }
 }

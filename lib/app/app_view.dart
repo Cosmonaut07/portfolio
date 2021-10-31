@@ -25,34 +25,17 @@ class _AppViewState extends State<AppView> {
     AppRoutes.SPLASH: (_) => InitPage(),
     AppRoutes.ERROR: (_) => ErrorPage(),
     AppRoutes.WRAPPER: (_) => WrapperPage(),
-    AppRoutes.WORK: (_) => WorkPage(),
-    AppRoutes.ABOUT: (_) => AboutPage(),
   };
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubit, AppState>(builder: (context, state) {
-      if (state is AppLoaded) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          routes: appRoutes,
-          title: 'Cosmonaut\'s portfolio',
-          home: InitScreenUtils(
-            child: WrapperPage(),
-          ),
-        );
-      }
-      if (state is AppFailed) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          routes: appRoutes,
-          title: 'Cosmonaut\'s portfolio',
-          home: InitScreenUtils(
-            child: ErrorPage(),
-          ),
-        );
-      } else
-        return InitPage();
-    });
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: appRoutes,
+      title: 'Cosmonaut\'s portfolio',
+      home: InitScreenUtils(
+        child: WrapperPage(),
+      ),
+    );
   }
 }

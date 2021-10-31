@@ -8,6 +8,7 @@ import 'package:portfolio/pages/wrapper/wrapper_page.dart';
 import 'app/app_view.dart';
 import 'app/bloc/app_cubit.dart';
 import 'app/constants.dart';
+import 'cubits/data_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => AppCubit(),
+      create: (_) => DataCubit(),
       child: AppView(),
     );
   }
