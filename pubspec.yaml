@@ -30,6 +30,7 @@ dependencies:
   flutter_screenutil: ^5.0.0+2
   url_launcher: ^6.0.12
   flutter_bloc: ^7.2.0
+  flutter_svg: ^0.23.0+1
 
 
 
@@ -51,7 +52,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/png/
+    - assets/svg/
   fonts:
   - family: Work
     fonts:
