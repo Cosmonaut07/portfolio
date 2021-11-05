@@ -2,13 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/app/app_helper.dart';
-import 'package:portfolio/pages/error_page.dart';
-import 'package:portfolio/pages/init_page.dart';
-import 'package:portfolio/pages/wrapper/wrapper_page.dart';
 import 'app/app_view.dart';
-import 'app/bloc/app_cubit.dart';
-import 'app/constants.dart';
 import 'cubits/data_cubit.dart';
 
 void main() async {

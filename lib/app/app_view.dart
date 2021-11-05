@@ -24,15 +24,6 @@ class _AppViewState extends State<AppView> {
     AppRoutes.ERROR: (_) => ErrorPage(),
     AppRoutes.WRAPPER: (_) => WrapperPage(),
   };
-  final lightTheme = ThemeData(
-    brightness: Brightness.light,
-    colorScheme: ColorScheme.light(),
-  );
-
-  final darkTheme = ThemeData(
-    brightness: Brightness.dark,
-    colorScheme: ColorScheme.dark(),
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +36,11 @@ class _AppViewState extends State<AppView> {
       ) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
+          theme: themeNotifier.isDark
+              ? AppThemes().darkTheme
+              : AppThemes().lightTheme,
           routes: appRoutes,
-          title: 'Cosmonaut\'s portfolio',
+          title: 'Cosmonaut`s portfolio',
           home: InitScreenUtils(
             child: WrapperPage(),
           ),

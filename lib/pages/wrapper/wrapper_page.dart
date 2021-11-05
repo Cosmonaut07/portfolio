@@ -54,22 +54,23 @@ class _WrapperPageState extends State<WrapperPage> {
                               direction:
                                   width < 200 ? Axis.vertical : Axis.horizontal,
                               children: [
-                                InkWell(
-                                  focusColor: kBACKGROUND,
-                                  hoverColor: kBACKGROUND,
-                                  onTap: () {
-                                    themeNotifier.isDark
-                                        ? themeNotifier.isDark = false
-                                        : themeNotifier.isDark = true;
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.all(20),
-                                    child: SvgPicture.asset(
+                                MouseRegion(
+                                  cursor: SystemMouseCursors.click,
+                                  child: GestureDetector(
+                                    onTap: () {
                                       themeNotifier.isDark
-                                          ? 'assets/svg/lightbulb-dark.svg'
-                                          : 'assets/svg/lightbulb-light.svg',
-                                      height: 24,
-                                      color: kPRIMARY,
+                                          ? themeNotifier.isDark = false
+                                          : themeNotifier.isDark = true;
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.all(20),
+                                      child: SvgPicture.asset(
+                                        themeNotifier.isDark
+                                            ? 'assets/svg/lightbulb-dark.svg'
+                                            : 'assets/svg/lightbulb-light.svg',
+                                        height: 24,
+                                        color: Theme.of(context).highlightColor,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -85,8 +86,10 @@ class _WrapperPageState extends State<WrapperPage> {
                                             .headline
                                             .copyWith(
                                                 color: pageIndex
-                                                    ? kPRIMARY700
-                                                    : kPRIMARY400),
+                                                    ? Theme.of(context)
+                                                        .highlightColor
+                                                    : Theme.of(context)
+                                                        .disabledColor),
                                       ),
                                     ),
                                   ),
@@ -106,8 +109,10 @@ class _WrapperPageState extends State<WrapperPage> {
                                             .headline
                                             .copyWith(
                                                 color: pageIndex
-                                                    ? kPRIMARY400
-                                                    : kPRIMARY700),
+                                                    ? Theme.of(context)
+                                                        .disabledColor
+                                                    : Theme.of(context)
+                                                        .highlightColor),
                                       ),
                                     ),
                                   ),

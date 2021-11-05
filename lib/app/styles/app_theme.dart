@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app/app.dart';
 
@@ -14,7 +15,7 @@ const kPRIMARY300 = Color.fromRGBO(124, 126, 128, 1);
 const kPRIMARY200 = Color.fromRGBO(147, 149, 150, 1);
 const kPRIMARY100 = Color.fromRGBO(190, 190, 191, 1);
 const kPRIMARY50 = Color.fromRGBO(234, 235, 235, 1);
-const kWHITE = Color.fromRGBO(255, 255, 255, 1);
+const kWHITE = Color.fromRGBO(252, 252, 252, 1);
 const kBACKGROUND = Color.fromRGBO(250, 250, 250, 1);
 const kLINK = Color.fromRGBO(28, 23, 255, 1);
 const kLIGHT_BLUE = Color.fromRGBO(230, 229, 255, 1);
@@ -71,9 +72,71 @@ extension ThemeExt on ThemeData {
 }
 
 class AppThemes {
-  ThemeData get theme => ThemeData(
+  ThemeData get lightTheme => ThemeData(
         fontFamily: 'Work',
+        focusColor: kBACKGROUND,
+        hoverColor: kBACKGROUND,
+        highlightColor: kPRIMARY900,
+        disabledColor: kPRIMARY200,
         scaffoldBackgroundColor: Color.fromRGBO(250, 250, 250, 1),
+        textTheme: TextTheme(
+          //Caption
+          caption: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 13,
+          ),
+          //Small
+          subtitle2: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 15,
+          ),
+          //P
+          subtitle1: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 17,
+          ),
+          //Body Medium
+          bodyText2: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w500,
+            fontSize: 17,
+          ),
+          //Body
+          bodyText1: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 17,
+          ),
+          //Headline
+          headline3: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 20,
+          ),
+          //H2
+          headline2: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 28,
+          ),
+          //H1
+          headline1: TextStyle(
+            color: kPRIMARY900,
+            fontWeight: FontWeight.w400,
+            fontSize: 36,
+          ),
+        ),
+      );
+  ThemeData get darkTheme => ThemeData(
+        fontFamily: 'Work',
+        focusColor: kPRIMARY700,
+        hoverColor: kPRIMARY50,
+        highlightColor: kWHITE,
+        disabledColor: kPRIMARY100,
+        scaffoldBackgroundColor: kPRIMARY700,
         textTheme: TextTheme(
           //Caption
           caption: TextStyle(
